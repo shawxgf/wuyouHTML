@@ -12,3 +12,13 @@ a {
     color: #000;
     cursor: pointer;
 }
+
+body {
+    /* background-color: rgb(0, 102, 255); */
+    font-size: 14px;
+}
+
+input {
+    border: 0 none;
+    outline-style: none;
+}
