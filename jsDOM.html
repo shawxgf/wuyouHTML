@@ -17,17 +17,66 @@
             border: 1px solid #ccc;
             margin-bottom: 10px;
         }
+
+        #carousel {
+            width: 200px;
+            height: 200px;
+            position: relative;
+        }
+
+        #carousel li {
+            width: 200px;
+            line-height: 200px;
+            position: absolute;
+            text-align: center;
+            text-shadow: 0 0 5px #000;
+            font-size: 35px;
+            color: #fff;
+            opacity: 0;
+            transition: opacity 1s;
+        }
+
+        #carousel li:nth-child(1) {
+            background-color: orange;
+        }
+
+        #carousel li:nth-child(2) {
+            background-color: brown;
+        }
+
+        #carousel li:nth-child(3) {
+            background-color: green;
+        }
+
+        #carousel li:nth-child(4) {
+            background-color: yellow;
+        }
+
+        .active {
+            opacity: 1;
+        }
     </style>
     <title>Document</title>
 </head>
 <body>
     <div id="block">默认内容</div>
-
+    <ul id="carousel">
+        <li class="active">海上明月</li>
+        <li>冰封万里</li>
+        <li>青山绿水</li>
+        <li>长歌当哭</li>
+    </ul>
 </body>
 <script>
     var block = document.querySelector('#block')
     block.style.width = '80px'
     block.style.backgroundColor = 'tomato'
-    block.className
+    block.onclick = function () {
+        alert('suprise')
+    }
+
+    block.addEventListener('click', function() {
+        alert('suprise')
+    })
 </script>
 </html>
