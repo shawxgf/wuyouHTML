@@ -52,7 +52,7 @@
             background-color: yellow;
         }
 
-        .active {
+        #carousel li.active {
             opacity: 1;
         }
     </style>
@@ -66,17 +66,37 @@
         <li>青山绿水</li>
         <li>长歌当哭</li>
     </ul>
+    <button id="prev">
+        上一张
+    </button>
+    <button id="next">
+        下一张
+    </button>
 </body>
 <script>
-    var block = document.querySelector('#block')
-    block.style.width = '80px'
-    block.style.backgroundColor = 'tomato'
-    block.onclick = function () {
-        alert('suprise')
-    }
+    var carousel = document.querySelector('#carousel')
+    var items = carousel.children
+    console.log(items)
+    var prevBtn = document.querySelector('#prev')
+    var nextBtn = document.querySelector('#next')
+    
+    var index = 0
+    nextBtn.addEventListener('click', function () {
+        items[index].className = ''
+        if (index === items.length - 1) {
+            index = -1
+        }
+        index++
+        items[index].className = 'active'
+    })
 
-    block.addEventListener('click', function() {
-        alert('suprise')
+    prevBtn.addEventListener('click', function () {
+        items[index].className = ''
+        if (index === 0) {
+            index = items.length
+        }
+        index--
+        items[index].className = 'active'
     })
 </script>
 </html>
