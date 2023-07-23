@@ -98,5 +98,13 @@
         index--
         items[index].className = 'active'
     })
+
+    var timer = setInterval(function () {
+        console.log('每隔2s输出一次')
+    }, 2000)
+
+    setTimeout(function () {
+        clearInterval(timer)
+    }, 6000);
 </script>
 </html>
